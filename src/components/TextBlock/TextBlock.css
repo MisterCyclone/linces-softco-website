@@ -1,0 +1,21 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  white-space: pre-line;
+}
+
+.center-block {
+  align-items: center;
+}
+
+.block p {
+  width: 90%;
+  max-width: 90%;
+}
+
+.center-text {
+  text-align: center;
+}
