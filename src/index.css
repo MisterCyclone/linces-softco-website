@@ -1,11 +1,10 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #0F172A;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,8 +30,44 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5vw;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  line-height: 120%;
+  letter-spacing: -2%;
+}
+
+h2 {
+  font-size: 1.5vw;
+  margin: 0;
+  padding: 0;
+  padding-top: 1vh;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  line-height: 120%;
+  letter-spacing: -2%;
+}
+
+h3 {
+  font-size: 1vw;
+  margin: 0;
+  padding: 0;
+  line-height: 120%;
+  letter-spacing: -2%;
+}
+
+p {
+  font-size: 1vw;
+  margin: 0;
+  padding: 0;
+  padding-top: 2vh;
+  line-height: 120%;
+  letter-spacing: -2%;
+  font-family: 'Nunito', sans-serif;
+  font-weight: medium;
 }
 
 button {

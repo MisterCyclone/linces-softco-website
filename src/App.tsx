@@ -1,33 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header/Header'
+import content from './sitecontent/homepage.json'
+import server1 from './assets/server1.png'
+import logo from './assets/logo.png'
+import ContentBlock from './components/ContentBlock/ContentBlock'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const heroSection = content['Hero Section'];
+  const aboutUsSection = content['About Us Section'];
+  const endingOne = content['Ending One'];
+  const endingTwo = content['Ending Two'];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header/>
+      <ContentBlock left={{type: "text", source: heroSection}} right={{type: "img", source: server1}}/>
+      <ContentBlock left={{type: "img", source: logo}} right={{type: "text", source: aboutUsSection}} useCard={true}/>
+      <ContentBlock left={{type: "text", source: endingOne, centerBlock: true}} right={{type: "text", source: endingTwo, centerBlock: true}} topAlign={true}/>
     </>
   )
 }
