@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  background: #F0EEEE;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0.2vh 0.2vh 0.2vh gray;
+}
+
+.header-logo {
+  height: 10vh;
+  width: auto;
+}
+
+.header-pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header-pages p {
+  margin-left: 3vw;
+  font-size: 1vw;
+  font-weight: bold;
+}
