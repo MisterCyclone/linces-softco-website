@@ -1,5 +1,6 @@
 import TextBlock from "../components/TextBlock/TextBlock";
-import type { contentPiece } from "../types/textBlockInterface";
+import type { contentPiece } from "../types/ContentBlockTypes";
+import '../components/ContentBlock/ContentBlock.css'
 
 export const renderContent = (content: contentPiece) => {
   switch (content.type) {
@@ -7,12 +8,12 @@ export const renderContent = (content: contentPiece) => {
       return (
         <TextBlock
           {...content.source}
-          centerHeader={content.centerBlock}
+          centerHeader={content.centerHeader}
         />
       );
 
     case "img":
-      return <img className="block" src={content.source} />;
+      return <img className="content-block-section-img" src={content.source} />;
 
     default:
       return null;

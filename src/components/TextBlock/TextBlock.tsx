@@ -1,20 +1,17 @@
 // Import react and styling
 import React from 'react';
-import './TextBlock.css';
-import type { textBlockProps } from '../../types/textBlockInterface';
+import '../ContentBlock/ContentBlock.css';
+import type { textBlockProps } from '../../types/ContentBlockTypes';
 
 const TextBlock: React.FC<textBlockProps> = ({ title, subtitle, text, centerHeader }) => {
 
-  const centerClass = centerHeader ? "center-block" : "";
-  const headerClass = centerHeader ? "center-text" : "";
-
   return (
-    <div className={`block ${centerClass}`}>
-      <h1 className={headerClass}>{title}</h1>
-      <h2 className={headerClass}>{subtitle}</h2>
+    <>
+      <h1 style={{textAlign: centerHeader ? "center" : "left"}}>{title}</h1>
+      <h2 style={{textAlign: centerHeader ? "center" : "left"}}>{subtitle}</h2>
       <p>{text}</p>
-    </div>
-  );
-};
+    </>
+    );
+  };
 
 export default TextBlock;
