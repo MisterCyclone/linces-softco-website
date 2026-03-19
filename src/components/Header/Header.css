@@ -7,9 +7,9 @@
   background: #F0EEEE;
   padding-left: 10%;
   padding-right: 10%;
+  z-index: 1000;
   
   display: flex;
-  align-items: center;
   justify-content: space-between;
   box-shadow: 0.2vh 0.2vh 0.2vh gray;
 }
@@ -22,11 +22,10 @@
 .header-pages {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 2vw;
 }
 
 .header-pages p {
-  margin-left: 3vw;
   font-size: 1vw;
   font-weight: bold;
 }
