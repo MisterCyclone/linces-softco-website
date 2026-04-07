@@ -1,0 +1,82 @@
+.footer-structure {
+  display: flex;
+  background-color: #021B27;
+  color: #CFCFCF;
+  height: 25vh;
+  padding: 0 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+  flex: 1;
+}
+
+.footer-middle,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  text-align: center;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+.footer-block-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-block-line,
+.footer-link {
+  font-size: 1vw;
+  font-weight: 350;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3vw;
+}
+
+.footer-icon {
+  font-size: 1vw;
+}
+
+.footer-text {
+  font-size: 1vw;
+  margin: 0;
+  line-height: 1.2;
+  font-family: 'Nunito';
+  font-weight: normal;
+}
+
+.footer-link {
+  color: #cfcfcf;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-logo-main {
+  width: 15vw;
+  cursor: pointer;
+}
+
+.footer-logo-credit {
+  width: 9vw;
+  cursor: pointer;
+}
+
+.footer-credit-text {
+  font-size: 0.6vw;
+  font-weight: 300;
+  text-align: center;
+}
