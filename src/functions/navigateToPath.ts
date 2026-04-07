@@ -1,56 +1,51 @@
 // Import functions
 import type { NavigateFunction } from 'react-router-dom';
 
-export const scrollToHashTarget = (hash: string, attempt = 0) => {
-  const targetId = hash.replace('#', '');
-  const target = document.getElementById(targetId);
+export const scrollToHashTarget = (hash: string) => {
+  
+  // Find div with the id of the hash
+  const target = document.getElementById(hash);
 
-  if (!target) {
-    if (attempt < 20) {
-      window.setTimeout(() => scrollToHashTarget(hash, attempt + 1), 50);
-    }
+  // if target doesn't exist then return
+  if (!target) { return; }
 
-    return;
-  }
-
-  const headerOffset = Math.round(window.innerHeight * 0.11);
-  const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-
+  // Scroll to the target
+  const targetTop = target.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.1;
   window.scrollTo({ top: targetTop, behavior: 'smooth' });
 };
 
+
+// Function to navigate to a specific path and handle hash scrolling
 export const navigateToPath = (navigate: NavigateFunction, path: string) => {
-  const [pathname, rawHash] = path.split('#');
-  const hash = rawHash ? `#${rawHash}` : '';
-  const currentPathname = window.location.pathname;
-  const normalizedPathname = pathname || currentPathname;
-  const isSamePage = normalizedPathname === currentPathname;
+
+  // Split the path into pathname and hash incase there is a hash given
+  const [pathname, hash] = path.split('#');
+  const isSamePage = pathname === window.location.pathname;
   
+  // If navigating to a different page, scroll to top immediately
   if (!isSamePage) { 
     window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
-  // Keep the URL clean: navigate by pathname only and handle hash scrolling manually.
-  navigate({ pathname: normalizedPathname });
+  // Navigate to the new path
+  navigate({ pathname: pathname });
 
+  // If there's a hash given, meaning a subsection has been selected, scroll to it after navigation
   if (hash) {
     if (isSamePage) {
       window.setTimeout(() => scrollToHashTarget(hash), 150);
       return;
     }
-    window.setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'auto' });
-      window.setTimeout(() => scrollToHashTarget(hash), 300);
-    }, 150);
+    window.setTimeout(() => scrollToHashTarget(hash), 300);
     return;
   }
 
+  // If no hash been given then follow this logic
   if (isSamePage) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return;
   }
 
-  window.setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  }, 150);
+  window.scrollTo({ top: 0, behavior: 'auto' });
+  return;
 };
