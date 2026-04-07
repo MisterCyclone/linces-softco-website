@@ -1,31 +1,132 @@
-.header {
+.header-structure {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 10vh;
-  background: #F0EEEE;
+  background: #FBFBFB;
   padding-left: 10%;
   padding-right: 10%;
+  margin-bottom: 10vh;
   z-index: 1000;
   
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-shadow: 0.2vh 0.2vh 0.2vh gray;
 }
 
 .header-logo {
-  height: 10vh;
+  height: 9vh;
   width: auto;
 }
 
-.header-pages {
+.header-menu {
+  height: 100%;
   display: flex;
   align-items: center;
-  gap: 2vw;
 }
 
-.header-pages p {
+.header-menu-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7vw;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.header-menu-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-menu-trigger {
+  border: none;
+  background: transparent;
+  padding: 0.5vw 0.6vw;
+  border-radius: 0.4vw;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45vw;
   font-size: 1vw;
+  font-weight: 700;
+  color: #0F172A;
+  cursor: pointer;
+}
+
+.header-menu-trigger .pi {
+  font-size: 1vw;
+  color: #528887;
+}
+
+.header-menu-item:hover .header-menu-trigger,
+.header-menu-item:focus-within .header-menu-trigger {
+  background: #d7e0f0;
+}
+
+.header-menu-trigger:focus-visible,
+.header-submenu-link:focus-visible {
+  outline: 2px solid #528887;
+  outline-offset: 1px;
+}
+
+.header-submenu-panel {
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  min-width: max-content;
+  padding: 0.7vw 0.8vw;
+  background: #ffffff;
+  border: 0.2vw solid #d9e1e7;
+  border-radius: 0.5vw;
+  display: none;
+  gap: 1vw;
+  z-index: 1001;
+}
+
+.header-menu-item:hover > .header-submenu-panel,
+.header-menu-item:focus-within > .header-submenu-panel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+}
+
+.header-submenu-title {
+  color: #364152;
+  font-size: 0.8vw;
   font-weight: bold;
+  margin-bottom: 0.5vw;
+}
+
+.header-submenu-list {
+  border-top: 0.2vh solid #e8eef1;
+  margin-top: 0.4vh;
+  padding-top: 0.4vh;
+}
+
+.header-submenu-link {
+  display: flex;
+  border: none;
+  background: transparent;
+  align-items: center;
+  gap: 0.4vw;
+  padding: 0.3vw 0;
+  text-align: left;
+  color: #0F172A;
+  font-size: 0.7vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header-submenu-link .pi {
+  color: #528887;
+  font-size: 1vw;
+}
+
+.header-submenu-link:hover .pi {
+  color: #0b4a4a;
 }
