@@ -1,0 +1,45 @@
+.image-carousel-card {
+  background-color: #ffffff;
+  border-top: 0.3vw solid #56c1c1;
+  --carousel-height: 40vh;
+  --carousel-indicator-color: #528887;
+  border-radius: 1vw;
+  box-shadow: 0 0.1vw 0.2vw rgb(0 0 0 / 0.2);
+  padding: 1vw;
+}
+
+.image-carousel-card--teal {
+  border-top-color: #56c1c1;
+  --carousel-indicator-color: #528887;
+}
+
+.image-carousel-card--purple {
+  border-top-color: #ae4ff8;
+  --carousel-indicator-color: #785791;
+}
+
+.image-carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--carousel-height);
+}
+
+.image-carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.image-carousel-card .p-carousel .p-carousel-content .p-carousel-prev,
+.image-carousel-card .p-carousel .p-carousel-content .p-carousel-next {
+  color: #0f172a;
+}
+
+.image-carousel-card .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  background-color: #d4d4d4;
+}
+
+.image-carousel-card .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: var(--carousel-indicator-color);
+}
