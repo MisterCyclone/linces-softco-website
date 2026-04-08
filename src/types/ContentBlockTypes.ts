@@ -31,6 +31,7 @@ export type contentButton = {
   href: string;
   theme?: carouselTheme;
   width?: sizeValue;
+  state?: unknown;
 };
 
 type infoCardStyleProps = {

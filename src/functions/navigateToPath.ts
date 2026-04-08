@@ -16,23 +16,24 @@ export const scrollToHashTarget = (hash: string) => {
 
 
 // Function to navigate to a specific path and handle hash scrolling
-export const navigateToPath = (navigate: NavigateFunction, path: string) => {
-
-  // Split the path into pathname and hash incase there is a hash given
-  const [pathname, hash] = path.split('#');
-  const isSamePage = pathname === window.location.pathname;
+export const navigateToPath = (navigate: NavigateFunction, path: string, state?: unknown) => {
+  const resolvedUrl = new URL(path, window.location.origin);
+  const pathname = resolvedUrl.pathname;
+  const search = resolvedUrl.search;
+  const hash = resolvedUrl.hash.replace('#', '');
+  const isSamePath = pathname === window.location.pathname;
   
   // If navigating to a different page, scroll to top immediately
-  if (!isSamePage) { 
+  if (!isSamePath) {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
   // Navigate to the new path
-  navigate({ pathname: pathname });
+  navigate({ pathname, search }, { state });
 
   // If there's a hash given, meaning a subsection has been selected, scroll to it after navigation
   if (hash) {
-    if (isSamePage) {
+    if (isSamePath) {
       window.setTimeout(() => scrollToHashTarget(hash), 150);
       return;
     }
@@ -40,12 +41,8 @@ export const navigateToPath = (navigate: NavigateFunction, path: string) => {
     return;
   }
 
-  // If no hash been given then follow this logic
-  if (isSamePage) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return;
+  // If no hash been given then keep the current scroll position for same-page state changes
+  if (!isSamePath) {
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
-
-  window.scrollTo({ top: 0, behavior: 'auto' });
-  return;
 };

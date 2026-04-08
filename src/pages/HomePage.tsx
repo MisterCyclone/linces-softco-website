@@ -16,6 +16,7 @@ import webIcon from '../assets/pages/home_page/web_icon.png';
 import homeServices from '../assets/pages/home_page/home_services.jpg';
 import logo from '../assets/global/logo.png';
 import velocityLogo from '../assets/pages/velocity_page/velocity_logo_cropped.png';
+import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const HomePage: React.FC = () => {
   const heroSection = content['Hero Section'];
@@ -45,7 +46,7 @@ const HomePage: React.FC = () => {
       <Banner image={homeBanner} />
       <div id='home-overview' className='page-anchor'>
         <ContentBlock
-          left={{ type: 'text', useCard: true, source: heroSection, buttons: [{ label: 'Book a Demo', href: '/contact', width: '15vw' }] }}
+          left={{ type: 'text', useCard: true, source: heroSection, buttons: [{ label: 'Book a Demo', href: '/contact#contact-form', state: openContactFormState, width: '15vw' }] }}
           right={{ type: 'img', source: hero1, paddingLeft: '3vw', paddingRight: '3vw' }}
           topAlign
         />
@@ -136,7 +137,7 @@ const HomePage: React.FC = () => {
             }
           ],
           buttons: [
-            { label: 'Book a Demo', href: '/contact', theme: 'purple' },
+            { label: 'Book a Demo', href: '/contact#contact-form', state: openContactFormState, theme: 'purple' },
             { label: 'Explore Velocity Enterprise', href: '/velocity-enterprise', theme: 'purple' }
           ]
         }}
@@ -200,7 +201,7 @@ const HomePage: React.FC = () => {
           centerHeader: true,
           buttonWidth: '15vw',
           buttonMarginTop: '0vh',
-          buttons: [{ label: 'Book a Demo', href: '/contact', width: '15vw' }]
+          buttons: [{ label: 'Book a Demo', href: '/contact#contact-form', state: openContactFormState, width: '15vw' }]
         }}
         topAlign
         topSeperatorLine

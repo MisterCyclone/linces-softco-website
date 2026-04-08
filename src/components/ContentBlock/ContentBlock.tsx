@@ -46,7 +46,7 @@ const ContentBlock: React.FC<contentPieceProps> = ({ left, right, useCard, topAl
                 className={`content-block-button content-block-button--${button.theme ?? 'teal'}`}
                 style={{ width: button.width ?? piece.buttonWidth }}
                 label={button.label}
-                onClick={() => navigateToPath(navigate, button.href)}
+                onClick={() => navigateToPath(navigate, button.href, button.state)}
               />
             ))}
           </div>

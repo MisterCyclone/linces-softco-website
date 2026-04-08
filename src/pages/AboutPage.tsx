@@ -8,6 +8,7 @@ import logo from '../assets/global/logo.png';
 import visionPicture from '../assets/pages/aboutus_page/vision_picture.png';
 import missionPicture from '../assets/pages/aboutus_page/mission_picture.png';
 import offerPicture from '../assets/pages/aboutus_page/offer_picture.png';
+import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const AboutPage: React.FC = () => {
 
@@ -58,7 +59,7 @@ const AboutPage: React.FC = () => {
       </div>
 
       <ContentBlock
-        left={{ type: 'text', source: servicesLine, centerHeader: true, buttonMarginTop: '5vh', decapitalizeHeader: true, buttonWidth: '16vw', buttons: [{ label: 'Contact Linces Softco', href: '/contact' }] }}
+        left={{ type: 'text', source: servicesLine, centerHeader: true, buttonMarginTop: '5vh', decapitalizeHeader: true, buttonWidth: '16vw', buttons: [{ label: 'Contact Linces Softco', href: '/contact#contact-form', state: openContactFormState }] }}
         topMargin='5vh'
         bottomMargin='5vh'
       />

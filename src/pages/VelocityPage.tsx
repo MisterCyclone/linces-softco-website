@@ -12,6 +12,7 @@ import closingPicture from '../assets/pages/velocity_page/velocityclosing_pictur
 import customsIcon from '../assets/pages/shared/customs_icon.png';
 import transportIcon from '../assets/pages/shared/transport_icon.png';
 import unifiedIcon from '../assets/pages/shared/unified_icon.png';
+import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const VelocityPage: React.FC = () => {
 
@@ -205,7 +206,7 @@ const VelocityPage: React.FC = () => {
         }}
       />
       <ContentBlock
-        left={{ type: 'text', source: closingSection,  buttonWidth: '21vw', buttons: [{ label: 'Book a Velocity Demonstration', href: '/contact', theme: 'purple' }] }}
+        left={{ type: 'text', source: closingSection,  buttonWidth: '21vw', buttons: [{ label: 'Book a Velocity Demonstration', href: '/contact#contact-form', state: openContactFormState, theme: 'purple' }] }}
         right={{ type: 'img', source: closingPicture, paddingLeft: '5vw', paddingRight: '10vw' }}
         topMargin='5vh'
         bottomMargin='5vh'

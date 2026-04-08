@@ -22,9 +22,9 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   // When a menu item is clicked, it navigates to the selected path
-  const handleNavClick = (event: React.MouseEvent<HTMLButtonElement>, path: string) => {
+  const handleNavClick = (event: React.MouseEvent<HTMLButtonElement>, path: string, state?: unknown) => {
     event.currentTarget.blur();
-    navigateToPath(navigate, path);
+    navigateToPath(navigate, path, state);
   };
 
   return (
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
               <div key={item.key} className='header-menu-item'>
 
                 {/* Build the main button */}
-                <button className='header-menu-trigger' onClick={(event) => handleNavClick(event, item.path)}>
+                <button className='header-menu-trigger' onClick={(event) => handleNavClick(event, item.path, item.state)}>
                   <div className={item.icon}/>
                   <div>{item.label}</div>
                   {itemHasSubmenu && <div className='pi pi-angle-down'/>}

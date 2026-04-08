@@ -9,6 +9,7 @@ export type menuItem = {
   label: string;
   icon: string;
   path: string;
+  state?: unknown;
   subSection?: subMenuSection[];
 };
 
@@ -121,6 +122,7 @@ export const menuItems: menuItem[] = [
     key: 'contact',
     label: 'Contact',
     icon: 'pi pi-envelope',
-    path: '/contact'
+    path: '/contact',
+    state: { openForm: false }
   }
 ];
