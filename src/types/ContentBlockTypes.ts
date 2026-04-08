@@ -45,7 +45,7 @@ type carouselContentPiece = {
 };
 
 export type contentPiece =
-  ({ type: 'text'; source: textBlock; centerHeader?: boolean } & baseContentPiece) |
+  ({ type: 'text'; source: textBlock; centerHeader?: boolean; decapitalizeHeader?: boolean } & baseContentPiece) |
   ({ type: 'img'; source: string } & baseContentPiece) |
   ({ type: 'infoCards'; source: infoCardData[] } & infoCardStyleProps & baseContentPiece) |
   ({ type: 'carousel'; source: carouselImage[] } & carouselContentPiece & baseContentPiece);
