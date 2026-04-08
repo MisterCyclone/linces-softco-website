@@ -1,59 +1,92 @@
 {
   "Hero Section": {
-    "title": "Digital Infrastructure for\nModern Trade and Transport.",
+    "title": "Digital Infrastructure for\nModern Trade and Transport",
     "subtitle": "",
     "text": "Linces Softco develops powerful software platforms that enable businesses to manage customs, transport, and operational workflows within a single, unified digital environment.\n\nWe develop powerful software platforms that enable businesses to manage customs, transport, and operational workflows within a single, unified digital environment"
   },
   "About Us Section": {
-    "title": "About Linces Softco.",
-    "subtitle": "Software Built Around Real Operational Requirements.",
+    "title": "About Linces Softco",
+    "subtitle": "Software Built Around Real Operational Requirements",
     "text": "Linces Softco develops software designed to support operationally critical environments. Our systems are engineered to integrate directly into business workflows, improving efficiency, strengthening visibility, and reducing reliance on fragmented systems and manual processes.\n\nWe specialise in building practical, reliable software platforms that enable organisations to manage complex operations with clarity and confidence. Our solutions are developed with long-term stability and scalability in mind, ensuring they continue to support business growth and operational evolution.\n\nFrom our flagship Velocity CTDMS platform to bespoke software solutions, Linces Softco provides the digital infrastructure required to support modern trade and transport operations."
   },
-  "Velocity Titles": {
-    "title": "Introducing Velocity CTDMS.",
-    "subtitle": "Software Built Around Real Operational Requirements.",
+  "Velocity Title": {
+    "title": "Introducing Velocity Enterprise",
+    "subtitle": "",
     "text": ""
   },
   "Velocity Introduction": {
-    "title": "",
-    "subtitle": "",
+    "title": "Velocity CTDMS",
+    "subtitle": "A Unified Customs and Transport Digital Management System",
     "text": "Velocity is a Customs and Transport Digital Management System (CTDMS) designed to bring customs clearance, transport coordination, and operational management into a single, integrated platform.\n\nBy consolidating critical workflows into one system, Velocity CDTMS eliminates the inefficiencies created by fragmented legacy software. It provides organisations with clear operational visibility, structured workflows, and a stable platform designed to support modern operational requirements.\n\nVelocity CTDMS enables businesses to manage their operations more efficiently, maintain compliance, and operate with greater confidence in their systems."
   },
-  "Customs Management Introduction": {
-    "title": "Customs Management.",
+  "Velocity CTDMS Title": {
+    "title": "Designed for Operational Control and Efficiency",
     "subtitle": "",
-    "text": "Velocity CTDMS enables organisations to prepare and manage customs declarations within a structured and reliable environment.\n\nBy centralising customs processes, businesses can improve accuracy, maintain compliance, and operate more efficiently."
+    "text": ""
+  },
+  "Customs Management Introduction": {
+    "title": "",
+    "subtitle": "Customs Management",
+    "text": "Velocity CTDMS enables organisations to prepare and manage customs declarations within a structured and reliable environment. \n\n By centralising customs processes, businesses can improve accuracy, maintain compliance, and operate more efficiently."
   },
   "Transport Management Introduction": {
-    "title": "Transport Management.",
-    "subtitle": "",
+    "title": "",
+    "subtitle": "Transport Management",
     "text": "Velocity CTDMS integrates transport management alongside customs workflows, allowing organisations to coordinate movements and maintain operational visibility from a single system."
   },
   "Unified Operational Platform Introduction": {
-    "title": "Unified Operational Platform.",
-    "subtitle": "",
+    "title": "",
+    "subtitle": "Unified Operational Platform",
     "text": "By bringing together multiple operational functions, Velocity CTDMS removes the need to rely on disconnected systems.\n\nThis unified approach improves efficiency and strengthens operational control."
   },
   "Scalable Software Architecture Introduction": {
-    "title": "Scalable Software Architecture.",
-    "subtitle": "",
+    "title": "",
+    "subtitle": "Scalable Software Architecture",
     "text": "Velocity CTDMS has been engineered to support long-term growth, providing a stable digital foundation that can evolve alongside business requirements."
   },
   "Services Introduction": {
-    "title": "Software Development and\nDigital Infrastructure.",
+    "title": "Software Development\nand Digital Infrastructure",
     "subtitle": "",
     "text": "In addition to our Velocity platform, Linces Softco develops bespoke software solutions tailored to the specific operational requirements of our clients.\n\nWe design and build systems that integrate directly into business workflows, ensuring maximum efficiency and long-term reliability.\n\nOur services include SaaS platform development, web-based operational systems, secure hosting, and infrastructure support. Every solution we develop is designed to provide lasting operational value and stability."
   },
-
+  "Bespoke Software Development": {
+    "title": "",
+    "subtitle": "Bespoke Software Development",
+    "text": "Little description here."
+  },
+  "SaaS Platform Development": {
+    "title": "",
+    "subtitle": "SaaS Platform Development",
+    "text": "Little description here."
+  },
+  "Web Application Development": {
+    "title": "",
+    "subtitle": "Web Application Development",
+    "text": "Little description here."
+  },
+  "Hosting and Technical Infrastructure": {
+    "title": "",
+    "subtitle": "Hosting and Technical Infrastructure",
+    "text": "Little description here."
+  },
+  "IT Support": {
+    "title": "",
+    "subtitle": "IT Support",
+    "text": "Little description here."
+  },
   "Ending One": {
-    "title": "Built on\nOperational Experience.",
+    "title": "Built on\nOperational Experience",
     "subtitle": "",
     "text": "Linces Softco was founded with a clear understanding of the operational challenges faced by businesses operating in regulated and logistics-driven environments. Our software is developed with a focus on usability, reliability, and practical functionality.\n\nWe prioritise clarity over complexity, ensuring that our systems support users effectively while maintaining the stability required for operationally critical environments.\n\nOur objective is simple: to build software that strengthens operational capability and provides organisations with complete confidence in their digital infrastructure."
   },
 
   "Ending Two": {
-    "title": "Modernise Your\n Operational Systems.",
+    "title": "Modernise Your\n Operational Systems",
     "subtitle": "",
     "text": "Whether you are looking to implement a fully integrated customs and transport management platform or require bespoke software tailored to your organisation, Linces Softco provides reliable solutions designed for modern operational environments.\n\nVelocity represents the next generation of operational software, providing the digital infrastructure required to support efficient, compliant, and scalable operations."
+  },
+
+  "Footer Address": {
+    "text": "UK Head Office\n\n5a St James Street\n\nDover\n\n CT16 1QD\n\nUnited Kingdom"
   }
 }
