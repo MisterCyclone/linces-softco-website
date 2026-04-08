@@ -1,0 +1,164 @@
+.contact-form-structure {
+  display: flex;
+  justify-content: center;
+  padding: 5vh 0;
+}
+
+.contact-form-card {
+  width: 50vw;
+  padding: 1.3vw 1.5vw;
+  background-color: #f8fafc;
+  border-radius: 1vw;
+  box-shadow: inset 0 1px 5px #9c9c9c;
+}
+
+.contact-form-minicard {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2vh 0;
+  background-color: #ffffff;
+  border-top: 0.3vw solid #56C1C1;
+  border-radius: 1vw;
+  box-shadow: 0 0.1vw 0.2vw rgb(0 0 0 / 0.2);
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.contact-form-minicard-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0;
+  padding-bottom: 1vh;
+  text-align: center;
+  text-transform: none;
+}
+
+.contact-form-minicard-icon {
+  color: #56C1C1;
+  padding-right: 0.4vw;
+  font-size: 1vw;
+}
+
+.contact-form-minicard-text {
+  margin: 0;
+  padding: 0;
+  color: #0f172a;
+  text-align: center;
+}
+
+.contact-form-minicard-address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2vh 0;
+  background-color: #ffffff;
+  border-top: 0.3vw solid #56C1C1;
+  border-radius: 1vw;
+  box-shadow: 0 0.1vw 0.2vw rgb(0 0 0 / 0.2);
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.contact-form-minicard-address .contact-form-minicard-text {
+  padding-left: 22%;
+  text-align: left;
+  padding-bottom: 1vh;
+}
+
+.contact-form-minicard-structure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-minicard-section {
+  width: 70%;
+}
+
+.contact-form-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1vw;
+  align-items: stretch;
+}
+
+.contact-form-side-stack {
+  display: grid;
+  gap: 2vh;
+}
+
+a.contact-form-minicard {
+  display: block;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+a.contact-form-minicard:hover .contact-form-minicard-text,
+a.contact-form-minicard:hover .contact-form-minicard-link {
+  text-decoration: underline;
+}
+
+.below-grid {
+  margin-top: 1vw;
+}
+
+.contact-form-minicard-link {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.contact-form-title {
+  width: 100%;
+  padding-top: 0;
+  color: #0f172a;
+}
+
+.contact-form-subtitle {
+  width: 100%;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.contact-form-row {
+  display: flex;
+  width: 100%;
+  gap: 1vw;
+  justify-content: center;
+}
+
+.contact-form-input {
+  margin-top: 2.5vh;
+  padding: 1vh;
+  width: 100%;
+  font-family: 'Nunito';
+  font-size: 1vw;
+  font-weight: normal;
+  color: #0f172a;
+  border: 1px solid #7E7E7E;
+  border-radius: 0.25vw;
+  resize: vertical;
+}
+
+.contact-form-submit-button {
+  border: none;
+  border-top: 0.3vw solid #56C1C1;
+  background-color: white;
+  width: 13vw;
+  border-radius: 0.5vw;
+  box-shadow: 0 0.1vw 0.2vw rgb(0 0 0 / 0.2);
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  color: #0f172a;
+}
+
+.contact-form-submit-button:hover {
+  background-color: #F8FAFC;
+  box-shadow: 0 0.1vw 0.2vw rgb(0 0 0 / 0.2), 0 0 10px #56C1C1;
+}
