@@ -14,7 +14,7 @@ type FooterLink = {
 
 // Office details is the far left column of the footer
 export const officeDetails: FooterLine[] = [
-  { text: 'UK Head Office', icon: 'pi pi-map-marker' },
+  { text: 'UK Head Office:', icon: 'pi pi-map-marker' },
   { text: '5a St James Street' },
   { text: 'Dover' },
   { text: 'CT16 1QD' },
@@ -39,6 +39,7 @@ export const contactLinks: FooterLink[] = [
     href: 'tel:+442081766213',
     icon: 'pi pi-phone',
   },
+
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/linces-softco-limited/',

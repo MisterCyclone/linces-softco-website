@@ -14,6 +14,9 @@ export type menuItem = {
 
 // This type holds a submenu option.
 // uses the same logic as main menu items
+// but in order to create working submenus, hashes are used inbetween the main path and the submenu path
+// for example: /about-us#missionphilosophy
+// you then create a div container that holds that sub-section with the id of 'missionphilosophy'
 type subMenuItem = {
   label: string;
   icon?: string;

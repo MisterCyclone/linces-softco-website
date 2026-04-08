@@ -19,7 +19,7 @@ const ContentBlock: React.FC<contentPieceProps> = ({ left, right, useCard, topAl
   const renderPiece = (piece: contentPiece) => {
     const buttons = piece.buttons ?? [];
 
-    // Info cards has a special rule because mutiple are rendered inside one content piece.
+    // Info cards has a special rule because mutiple are rendered inside one content piece
     // And so require unique styling
     const isInfoCardCollection = piece.type === 'infoCards';
 

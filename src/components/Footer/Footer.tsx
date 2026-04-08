@@ -3,8 +3,8 @@ import React from 'react';
 import './Footer.css';
 
 // Import assets
-import logo from '../../assets/logo.png';
-import afssLogo from '../../assets/afss_logo.png';
+import logo from '../../assets/global/logo.png';
+import afssLogo from '../../assets/global/afss_logo.png';
 
 // Import content
 import { officeDetails, companyDetails, contactLinks, credits, copyright } from '../../sitecontent/FooterContent';

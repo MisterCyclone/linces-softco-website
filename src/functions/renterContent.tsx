@@ -16,6 +16,7 @@ export const renderContent = (content: contentPiece) => {
           subtitle={content.source.subtitle}
           text={content.source.text}
           centerHeader={content.centerHeader}
+          decapitalizeHeader={content.decapitalizeHeader}
         />
       );
 
