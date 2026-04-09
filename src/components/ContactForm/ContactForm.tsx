@@ -1,33 +1,129 @@
 // Import react and styling
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactForm.css';
-
-// Import primereact components
 import { Button } from 'primereact/button';
-
-// Import content
 import { addressCard, contactAltWaysTitle, contactFormTitle, linkedinCard, sideContactCards } from '../../sitecontent/ContactFormContent';
 
-// Manages open/close logic
 type contactFormProps = {
   onClose: () => void;
 };
 
+type formData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
 const ContactForm: React.FC<contactFormProps> = ({ onClose }) => {
+
+  // useState to hold user form data
+  const [formData, setFormData] = useState<formData>({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  // useState to handle loading and error states
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Handle input changes for all form fields
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.currentTarget;
+    setFormData(input => ({ ...input, [name]: value }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      // Check to see if form is fully filled out before sending to API
+      if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+        setError('All fields are required');
+        return;
+      }
+
+      //Check to see if email is valid using a simple regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        setError('Please enter a valid email address');
+        return;
+      }
+
+      // Send to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      // Success - reset form
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      alert('Message sent successfully!');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className='contact-form-structure'>
       <div className='contact-form-card'>
         <h1 className='contact-form-title'>{contactFormTitle}</h1>
+        
         <div className='contact-form-row'>
-          <input className='contact-form-input' placeholder='Name' />
-          <input className='contact-form-input' placeholder='Email' />
+          <input 
+            className='contact-form-input' 
+            placeholder='Name'
+            name='name'
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+          <input 
+            className='contact-form-input' 
+            placeholder='Email'
+            name='email'
+            type='email'
+            value={formData.email}
+            onChange={handleInputChange}
+          />
         </div>
-        <input className='contact-form-input' placeholder='Subject' />
-        <textarea className='contact-form-input' placeholder='Message' rows={1} />
+        <input 
+          className='contact-form-input' 
+          placeholder='Subject'
+          name='subject'
+          value={formData.subject}
+          onChange={handleInputChange}
+        />
+        <textarea 
+          className='contact-form-input' 
+          placeholder='Message' 
+          name='message'
+          rows={1}
+          value={formData.message}
+          onChange={handleInputChange}
+        />
+        {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
         <div className='contact-form-row'>
-          <Button label='Send Message' className='contact-form-submit-button'/>
+          <Button 
+            label='Send Message' 
+            className='contact-form-submit-button'
+            onClick={handleSubmit}
+            loading={isLoading}
+          />
         </div>
+        
         <h1 className='contact-form-subtitle'>{contactAltWaysTitle}</h1>
         
         <div className='contact-form-minicard-structure'>
