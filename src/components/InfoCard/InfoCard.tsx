@@ -13,28 +13,6 @@ import { navigateToPath } from '../../functions/navigateToPath.ts';
 // Import components
 import TextBlock from '../TextBlock/TextBlock';
 
-/**
- * The InfoCard component displays a block of text with a title and subtitle.
- * @returns The rendered InfoCard component.
- * 
- * @param {string} props.topBorderColor - The color of the top border of the card.
- * @param {object} props.readMoreLink (optional) - An object containing the text and link for a "read more" button.
- * @param {object} props.content - An object containing the title, subtitle, and text content of the card.
- * @param {string} props.icon (optional) - The URL of an icon to display at the top of the card.
- * @param {string|number} props.cardWidth (optional) - The width of the card.
- * @param {string|number} props.cardPaddingTop (optional) - The padding at the top of the card.
- *
-  * @example
-  * <InfoCard
-  *   topBorderColor="#56C1C1"
-  *   readMoreLink={{ text: "Read More", link: "/more-info" }}
-  *   content={{ title: "Card Title", subtitle: "Card Subtitle", text: "This is the main content of the card." }}
-  *   icon="https://example.com/icon.png"
-  *   cardWidth="10vw"
-  *   cardPaddingTop="5vh"
-  * />
- */
-
 const InfoCard: React.FC<infoCardProps> = ({topBorderColor, readMoreLink, content, icon, cardWidth, cardPaddingTop}) => {
   
   // Set up navigate function for read more links

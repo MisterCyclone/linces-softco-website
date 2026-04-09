@@ -55,7 +55,9 @@ const Footer: React.FC = () => {
 
       {/* Right Section of the footer */}
       <div className='footer-right'>
-        <img src={afssLogo} className='footer-logo-credit' alt='AFSS logo' />
+        <a href='https://afss.org.uk/members/' target='_blank' rel='noopener noreferrer'>
+          <img src={afssLogo} className='footer-logo-credit' alt='AFSS logo' />
+        </a>
         {credits.map((group) => (
           <div key={group[0]}> {group.map((line) => ( <div key={line} className='footer-credit-text'> {line} </div>))}</div>))}
       </div>

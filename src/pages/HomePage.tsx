@@ -2,20 +2,10 @@ import React from 'react';
 import Banner from '../components/Banner/Banner';
 import ContentBlock from '../components/ContentBlock/ContentBlock';
 import content from '../sitecontent/homepage.json';
-import homeBanner from '../assets/pages/home_page/home_banner.png';
-import hero1 from '../assets/pages/home_page/hero1.jpg';
-import customsIcon from '../assets/pages/shared/customs_icon.png';
-import transportIcon from '../assets/pages/shared/transport_icon.png';
-import unifiedIcon from '../assets/pages/shared/unified_icon.png';
-import scalableIcon from '../assets/pages/shared/scalable_icon.png';
-import softwareDevIcon from '../assets/pages/home_page/dev_icon.png';
-import supportIcon from '../assets/pages/home_page/support_icon.png';
-import saasIcon from '../assets/pages/home_page/saas_icon.png';
-import hostingIcon from '../assets/pages/home_page/server_icon.png';
-import webIcon from '../assets/pages/home_page/web_icon.png';
-import homeServices from '../assets/pages/home_page/home_services.jpg';
-import logo from '../assets/global/logo.png';
-import velocityLogo from '../assets/pages/velocity_page/velocity_logo_cropped.png';
+import { homeBanner, hero1, softwareDevIcon, supportIcon, saasIcon, hostingIcon, webIcon, homeServices } from '../assets/pages/home_page/homeImages';
+import { customsIcon, transportIcon, unifiedIcon, scalableIcon } from '../assets/pages/shared/sharedImages';
+import { logo } from '../assets/global/globalImages';
+import { velocityLogo } from '../assets/pages/velocity_page/velocityImages';
 import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const HomePage: React.FC = () => {

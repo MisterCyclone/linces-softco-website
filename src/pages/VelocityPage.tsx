@@ -1,17 +1,9 @@
 import React from 'react';
 import Banner from '../components/Banner/Banner';
 import ContentBlock from '../components/ContentBlock/ContentBlock';
-import velocityBanner from '../assets/pages/velocity_page/velocity_banner.png';
+import { velocityBanner, velocityLogo, heroTwoPicture, heroThreePicture, closingPicture } from '../assets/pages/velocity_page/velocityImages';
 import pageContent from '../sitecontent/velocitypage.json';
-
-import velocityLogo from '../assets/pages/velocity_page/velocity_logo_cropped.png';
-import heroTwoPicture from '../assets/pages/velocity_page/velocityherotwo_picture.png';
-import heroThreePicture from '../assets/pages/velocity_page/velocityherothree_picture.png';
-import closingPicture from '../assets/pages/velocity_page/velocityclosing_picture.png';
-
-import customsIcon from '../assets/pages/shared/customs_icon.png';
-import transportIcon from '../assets/pages/shared/transport_icon.png';
-import unifiedIcon from '../assets/pages/shared/unified_icon.png';
+import { customsIcon, transportIcon, unifiedIcon } from '../assets/pages/shared/sharedImages';
 import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const VelocityPage: React.FC = () => {

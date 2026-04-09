@@ -1,16 +1,8 @@
 import React from 'react';
 import Banner from '../components/Banner/Banner';
 import ContentBlock from '../components/ContentBlock/ContentBlock';
-import servicesBanner from '../assets/pages/services_page/services_banner.png';
+import { servicesBanner, heroPicture, softwareDevPicture, saasPicture, webDevPicture, hostingPicture, itsupportPicture, servicesClosingPicture } from '../assets/pages/services_page/servicesImages';
 import pageContent from '../sitecontent/servicespage.json';
-
-import heroPicture from '../assets/pages/services_page/serviceshero_picture.png';
-import softwareDevPicture from '../assets/pages/services_page/softwaredev_picture.png';
-import saasPicture from '../assets/pages/services_page/saas_picture.png';
-import webDevPicture from '../assets/pages/services_page/webdev_picture.png';
-import hostingPicture from '../assets/pages/services_page/hosting_picture.png';
-import itsupportPicture from '../assets/pages/services_page/itsupport_picture.png';
-import servicesClosingPicture from '../assets/pages/services_page/servicesclosing_picture.png';
 import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const ServicesPage: React.FC = () => {
@@ -75,7 +67,7 @@ const ServicesPage: React.FC = () => {
         />
       </div>
       <ContentBlock
-        left={{ type: 'text', source: servicesClosing, buttons: [{ label: 'Discuss Your Requirements', href: '/contact#contact-form', state: openContactFormState, theme: 'teal', width: '17vw' }] }}
+        left={{ type: 'text', source: servicesClosing, buttons: [{ label: 'Discuss Your Requirements', href: '/contact#contact-form', state: openContactFormState, theme: 'teal', width: '19vw' }] }}
         right={{ type: 'img', source: servicesClosingPicture, paddingLeft: '7vw', paddingRight: '7vw' }}
         topMargin='5vh'
         bottomMargin='5vh'

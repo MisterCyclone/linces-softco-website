@@ -3,12 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Banner from '../components/Banner/Banner';
 import ContactForm from '../components/ContactForm/ContactForm';
 import ContentBlock from '../components/ContentBlock/ContentBlock';
-import contactBanner from '../assets/pages/contact_page/contact_banner.png';
+import { contactBanner, contactIntroPicture, requestInfoPicture, closingPicture } from '../assets/pages/contact_page/contactImages';
 import pageContent from '../sitecontent/contactpage.json';
 import { openContactFormState } from '../sitecontent/ContactFormContent';
-import contactIntroPicture from '../assets/pages/contact_page/contactintro_picture.png';
-import requestInfoPicture from '../assets/pages/contact_page/requestinfo_picture.png';
-import closingPicture from '../assets/pages/contact_page/reliablesoftware_picture.png';
 
 
 const ContactPage: React.FC = () => {

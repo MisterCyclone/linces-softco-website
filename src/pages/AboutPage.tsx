@@ -1,13 +1,9 @@
 import React from 'react';
 import Banner from '../components/Banner/Banner';
 import ContentBlock from '../components/ContentBlock/ContentBlock';
-import aboutUsBanner from '../assets/pages/aboutus_page/aboutus_banner.png';
+import { aboutUsBanner, visionPicture, missionPicture, offerPicture } from '../assets/pages/aboutus_page/aboutImages';
 import pageContent from '../sitecontent/aboutuspage.json';
-import logo from '../assets/global/logo.png';
-
-import visionPicture from '../assets/pages/aboutus_page/vision_picture.png';
-import missionPicture from '../assets/pages/aboutus_page/mission_picture.png';
-import offerPicture from '../assets/pages/aboutus_page/offer_picture.png';
+import { logo } from '../assets/global/globalImages';
 import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const AboutPage: React.FC = () => {
