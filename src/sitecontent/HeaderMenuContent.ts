@@ -93,6 +93,12 @@ export const menuItems: menuItem[] = [
           { label: 'Features', icon: 'pi pi-list', path: '/velocity-enterprise' },
           { label: 'Benefits', icon: 'pi pi-chart-line', path: '/velocity-enterprise' }
         ]
+      },
+      {
+        title: 'Login',
+        items: [
+          { label: 'Login', icon: 'pi pi-question-circle', path: '/velocity-enterprise' },
+        ]
       }
     ]
   },
@@ -124,5 +130,5 @@ export const menuItems: menuItem[] = [
     icon: 'pi pi-envelope',
     path: '/contact',
     state: { openForm: false }
-  }
+  },
 ];
