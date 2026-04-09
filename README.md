@@ -1,15 +1,225 @@
-# Linces Softco Limited Website Documentation
+# Linces Softco Limited - Website Documentation
+
 ## Created by Alfie Skinner (MisterCyclone)
+- Contact Email: alfieskinner@mistercyclone.co.uk
+- GitHub: https://github.com/MisterCyclone
 
 ## Overview
 
-The site is built from a small set of reusable components and matching `sitecontent` files. Most pages follow the same pattern:
+This repository is the codebase for the offical Linces Softce Limited website.
+- It is built on a system of reusable components.
+- Text content is sourced from JSON files by page in the `siteContent` folder
+- Image content in the `assets` folder. 
 
-1. page data is stored in `src/sitecontent/*.ts` or `src/sitecontent/*.json`
-2. the page component imports that content
-3. reusable components render the content with shared styling and navigation behavior
+This allows for a plug and play style for creating or editing pages and content.
 
-# Component Guide
+
+## Tools & Utility Documentation
+- [Node.js](https://nodejs.org/en) - Cross-platform Javascript runtime environment. 
+- [Vite](https://vite.dev/) - Node.js build tool and bundler.
+- [React](https://react.dev/) - Frontend/Client website & app framework
+- [PrimeReact](https://primereact.org/) - GUI, UI and UI Builder. (Structure)
+- [TypeScript](https://www.typescriptlang.org/) - Programming Language (Functionality)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Stylesheet language. (Visuals)
+
+## Project Structure
+
+```text
+linces-softco-website/
+|-- src/
+|   |-- assets/
+|   |   |-- banners/
+|   |   |-- global/
+|   |   `-- pages/
+|   |       |-- aboutus_page/
+|   |       |-- contact_page/
+|   |       |-- home_page/
+|   |       |-- services_page/
+|   |       |-- shared/
+|   |       `-- velocity_page/
+|   |-- components/
+|   |   |-- Banner/
+|   |   |-- ContactForm/
+|   |   |-- ContentBlock/
+|   |   |-- Footer/
+|   |   |-- Header/
+|   |   |-- ImageCarousel/
+|   |   |-- InfoCard/
+|   |   `-- TextBlock/
+|   |-- functions/
+|   |-- pages/
+|   |-- sitecontent/
+|   `-- types/
+```
+
+## Installation & Setup
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- You must have [Node.js](https://nodejs.org/en/) (version 24.10.1 or later) installed.
+- You must have the [Repository](https://github.com/MisterCyclone/linces-softco-website) cloned.
+
+### Install dependencies
+
+This command installs all the necessary packages defined in `package.json`.
+```bash
+npm install
+```
+
+### Running the Dev Build
+To run a live dev build run the command below. The dashboard will be accessible at `http://localhost:5173` by default.
+```bash
+npm run dev
+```
+<br/>
+
+# Components Guide
+
+## ContentBlock
+
+ContentBlocks are the main building blocks of displaying site content. They primarily take in two components of and render them side by side. 
+
+The components it takes in referred to as contentPieces for this project. Below are the different types of components that ContentBlock takes in.
+
+### contentPiece Types:
+| `type` value | Required fields | Type specific optional fields | Description |
+| --- | --- | --- | --- |
+| `text` | `source` | `centerHeader`, `decapitalizeHeader` | Renders a `TextBlock` with title, subtitle, and body text. |
+| `img` | `source` | none | Renders an image using the provided source path. |
+| `infoCards` | `source` | `cardWidth`, `cardPaddingTop`, `cardGap` | Renders a grid of `InfoCard` components. |
+| `carousel` | `source` | `styling`, `behavior` | Renders an `ImageCarousel` component. |
+
+### Example for text and images
+```tsx
+<ContentBlock
+	left={{
+		type: 'text',
+		source: funnyBrotherIntroduction,
+		useCard: true,
+		buttons: [{ label: 'Contact the Funny Brothers', href: '/contact#contact-form', state: openContactFormState }],
+	}}
+	right={{ type: 'img', source: funnyBrothersImage, paddingLeft: '3vw', paddingRight: '3vw' }}
+/>
+```
+
+### Example for infocards
+Usually Infocards are used on their own with no other component with them.
+
+```tsx
+<ContentBlock
+	left={{
+		type: 'infoCards',
+		source: [
+			{
+				topBorderColor: '#56C1C1',
+				content: englandTextContent
+				readMoreLink: { text: 'Learn More >>>', link: '/countries#england' }
+			},
+			{
+				topBorderColor: '#F4A259',
+				content: franceTextContent
+				readMoreLink: { text: 'Learn More >>>', link: '/smellycountries#france' },
+			},
+		],
+		cardWidth: '18vw',
+		cardGap: '2vw',
+	}}
+/>
+```
+
+### Example for image carousels
+Usually Image Carousels are used on their own with no other component with them.
+
+```tsx
+<ContentBlock
+	left={{
+		type: 'carousel',
+		source: [
+			{ src: casinoMemoriesOne, alt: 'Cheating the dealer at blackjack' },
+			{ src: casinoMemoriesTwo, alt: 'Eating casino chips at roulette when no one is looking' },
+			{ src: casinoMemoriesThree, alt: 'Getting kicked out and beaten up.' },
+		],
+		styling: {
+			theme: 'teal',
+			height: '40vh',
+			topBorderColor: '#56C1C1',
+		},
+		behavior: {
+			numVisible: 1,
+			numScroll: 1,
+			circular: true,
+			autoplayInterval: 5000,
+		},
+	}}
+/>
+```
+
+### Props:
+These are props that can be manipulated to style individual content blocks.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `left` | `contentPiece` | Yes | Main content block shown on the left side, or the only block when `right` is omitted. |
+| `right` | `contentPiece` | No | Optional second content block shown on the right side. |
+| `useCard` | `boolean` | No | Wraps the overall content area in a card. |
+| `topAlign` | `boolean` | No | Aligns content to the top instead of centering it vertically. |
+| `topMargin` | `number \| string` | No | Sets the top padding for the content wrapper. Defaults to `10vh`. |
+| `bottomMargin` | `number \| string` | No | Sets the bottom padding for the content wrapper. Defaults to `0`. |
+| `backgroundColor` | `string` | No | Sets the outer wrapper background color. |
+| `topSeperatorLine` | `boolean` | No | Adds a top border line to the content area. |
+| `bottomSeperatorLine` | `boolean` | No | Adds a bottom border line to the content area. |
+| `miniBottomSeperatorLine` | `boolean` | No | Adds a smaller divider below the block. |
+
+
+### contentPieceProps:
+These are props that can be manipulated to style specific sides of a contentblock.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `paddingLeft` | `number \| string` | No | Left padding applied to the content section. |
+| `paddingRight` | `number \| string` | No | Right padding applied to the content section. |
+| `width` | `number \| string` | No | Width applied to the content section. |
+| `buttonWidth` | `number \| string` | No | Default width for buttons inside the block. |
+| `buttonMarginTop` | `number \| string` | No | Top margin applied above the button row. |
+| `buttons` | `contentButton[]` | No | Optional list of action buttons rendered below the content. |
+| `useCard` | `boolean` | No | Wraps the specific piece in a PrimeReact `Card`. |
+
+### contentButton:
+These are props that go into styling and setting up buttons inside of content pieces.
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `label` | `string` | Yes | Button text shown to the user. |
+| `href` | `string` | Yes | Navigation target passed to the `navigateToPath` function. |
+| `theme` | `'teal' \| 'purple'` | No | Styling theme applied through the button class name. |
+| `width` | `number \| string` | No | Overrides the button width. |
+| `state` | `unknown` | No | Optional router state passed through navigation. |
+
+
+### Shared Navigation:
+
+Most buttons and links use the `navigateToPath` function in `src/functions/navigateToPath.ts`.
+
+It handles:
+
+- Page navigation
+- Hash scrolling for navigating to specifc sub-sections
+- Handling optional router states, mostly logic for the contact form so it can be called from other pages
+
+When you need a button to open the contact form, use the contact route plus the specific router state:
+
+```tsx
+import { openContactFormState } from '../sitecontent/ContactFormContent';
+
+{
+	label: 'Book a Demo',
+	href: '/contact#contact-form',
+	state: openContactFormState,
+}
+```
+
 
 ## Banner
 
@@ -27,89 +237,7 @@ import Banner from '../components/Banner/Banner';
 | --- | --- | --- | --- |
 | `image` | `string` | Yes | Image path or URL shown in the banner. |
 
-## ContentBlock
 
-This is the main page layout component. It renders one or two contentPieces side-by-side, optionally in a card wrapper.
-
-```tsx
-<ContentBlock
-	left={{
-		type: 'text',
-		source: heroSection,
-		useCard: true,
-		buttons: [{ label: 'Book a Demo', href: '/contact#contact-form', state: openContactFormState }],
-	}}
-	right={{ type: 'img', source: heroImage, paddingLeft: '3vw', paddingRight: '3vw' }}
-/>
-```
-
-### Props:
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `left` | `contentPiece` | Yes | Main content block shown on the left side, or the only block when `right` is omitted. |
-| `right` | `contentPiece` | No | Optional second content block shown on the right side. |
-| `useCard` | `boolean` | No | Wraps the overall content area in a card. |
-| `topAlign` | `boolean` | No | Aligns content to the top instead of centering it vertically. |
-| `topMargin` | `number \| string` | No | Sets the top padding for the content wrapper. Defaults to `10vh`. |
-| `bottomMargin` | `number \| string` | No | Sets the bottom padding for the content wrapper. Defaults to `0`. |
-| `backgroundColor` | `string` | No | Sets the outer wrapper background color. |
-| `topSeperatorLine` | `boolean` | No | Adds a top border line to the content area. Spelling is preserved from the code. |
-| `bottomSeperatorLine` | `boolean` | No | Adds a bottom border line to the content area. Spelling is preserved from the code. |
-| `miniBottomSeperatorLine` | `boolean` | No | Adds a smaller divider below the block. Spelling is preserved from the code. |
-
-### contentPiece Types:
-| `type` value | Required fields | Variant-specific optional fields | Description |
-| --- | --- | --- | --- |
-| `text` | `source` | `centerHeader`, `decapitalizeHeader` | Renders a `TextBlock` with title, subtitle, and body text. |
-| `img` | `source` | none | Renders an image using the provided source path. |
-| `infoCards` | `source` | `cardWidth`, `cardPaddingTop`, `cardGap` | Renders a grid of `InfoCard` components. |
-| `carousel` | `source` | `styling`, `behavior` | Renders an `ImageCarousel` component. |
-
-### Shared Layout Fields:
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `paddingLeft` | `number \| string` | No | Left padding applied to the content section. |
-| `paddingRight` | `number \| string` | No | Right padding applied to the content section. |
-| `width` | `number \| string` | No | Width applied to the content section. |
-| `buttonWidth` | `number \| string` | No | Default width for buttons inside the block. |
-| `buttonMarginTop` | `number \| string` | No | Top margin applied above the button row. |
-| `buttons` | `contentButton[]` | No | Optional list of action buttons rendered below the content. |
-| `useCard` | `boolean` | No | Wraps the specific piece in a PrimeReact `Card`. |
-
-### contentButton:
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `label` | `string` | Yes | Button text shown to the user. |
-| `href` | `string` | Yes | Navigation target passed to `navigateToPath`. |
-| `theme` | `'teal' \| 'purple'` | No | Styling theme applied through the button class name. |
-| `width` | `number \| string` | No | Overrides the button width. |
-| `state` | `unknown` | No | Optional router state passed through navigation. |
-
-
-### Shared Navigation:
-
-Most buttons and links use the shared `navigateToPath` helper in `src/functions/navigateToPath.ts`.
-
-It handles:
-
-- page navigation
-- hash scrolling
-- optional router state
-
-When you need a button to open the contact form, use the contact route plus the shared router state:
-
-```tsx
-import { openContactFormState } from '../sitecontent/ContactFormContent';
-
-{
-	label: 'Book a Demo',
-	href: '/contact#contact-form',
-	state: openContactFormState,
-}
-```
 
 ## TextBlock
 
@@ -127,6 +255,8 @@ Used internally by `ContentBlock` and `InfoCard` to render title, subtitle, and 
 
 ### Props:
 
+Text content for the site only stores titles, subtitles and text. the optional props are handled when chosing to display text as a content piece in a content block.
+
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `title` | `string` | Yes | Title shown in the text block. |
@@ -137,7 +267,7 @@ Used internally by `ContentBlock` and `InfoCard` to render title, subtitle, and 
 
 ## InfoCard
 
-Used for the card grids on the home and velocity pages.
+On its own it's a card that displays information in a neat format. This makes it useful for displaying mutiple relating pieces of information in a neat manner and so contentblocks take arrays of them and renders them together.
 
 ```tsx
 <InfoCard
@@ -190,7 +320,7 @@ Used for swipeable or auto-playing image strips.
 
 ## ContactForm
 
-The contact form is controlled by the contact page route state.
+The contact form is controlled by the contact page route state. It's closed by default and is opened when a button that has the correct navigation configuration pointing to it.
 
 ```tsx
 <ContactForm onClose={() => navigate('/contact', { replace: true, state: null })} />
@@ -204,31 +334,7 @@ The contact form is controlled by the contact page route state.
 
 To open the form from another page, navigate to `/contact#contact-form` and pass `openContactFormState` from `src/sitecontent/ContactFormContent.ts`.
 
-## Header and Footer
-
-These components do not take page-specific props.
-
-- `Header` reads its navigation items from `src/sitecontent/HeaderMenuContent.ts`.
-- `Footer` reads its content from `src/sitecontent/FooterContent.ts`.
-
-To add, remove, or rename items, update the corresponding sitecontent file instead of editing the component directly.
-
-## Site Content Files
-
-The site separates layout from content. Common content files include:
-
-- `src/sitecontent/homepage.json`
-- `src/sitecontent/aboutuspage.json`
-- `src/sitecontent/servicespage.json`
-- `src/sitecontent/velocitypage.json`
-- `src/sitecontent/contactpage.json`
-- `src/sitecontent/FooterContent.ts`
-- `src/sitecontent/HeaderMenuContent.ts`
-- `src/sitecontent/ContactFormContent.ts`
-
-If you are changing text, labels, links, or contact details, update these files first.
-
-## Contact Form Routing
+### Contact Form Routing
 
 The contact form opens when the user navigates to `/contact#contact-form` with router state `{ openForm: true }`.
 
@@ -245,4 +351,43 @@ import { openContactFormState } from '../sitecontent/ContactFormContent';
 ```
 
 The form closes by clearing the router state and returning to `/contact`.
+
+## Header and Footer
+
+These components do not take page-specific props.
+
+- `Header` reads its navigation items from `src/sitecontent/HeaderMenuContent.ts`.
+- `Footer` reads its content from `src/sitecontent/FooterContent.ts`.
+
+To add, remove, or rename items, update the appropiate sitecontent file instead of editing the component directly.
+
+## Text Content Files
+
+Text content is stored in the site content folder with JSON files per page.
+
+- `src/sitecontent/homepage.json`
+- `src/sitecontent/aboutuspage.json`
+- `src/sitecontent/servicespage.json`
+- `src/sitecontent/velocitypage.json`
+- `src/sitecontent/contactpage.json`
+- `src/sitecontent/FooterContent.ts`
+- `src/sitecontent/HeaderMenuContent.ts`
+- `src/sitecontent/ContactFormContent.ts`
+
+If you are changing text, labels, links, or contact details, update these files first.
+
+## Image Content Files
+
+Image content is stored in the assets folders and grouped through image export files.
+
+- `src/assets/pages/home_page/homeImages.ts`
+- `src/assets/pages/aboutus_page/aboutImages.ts`
+- `src/assets/pages/services_page/servicesImages.ts`
+- `src/assets/pages/velocity_page/velocityImages.ts`
+- `src/assets/pages/contact_page/contactImages.ts`
+- `src/assets/pages/shared/sharedImages.ts`
+- `src/assets/global/globalImages.ts`
+
+If you are changing image paths, adding new images, or replacing existing images, update these files first.
+
 
