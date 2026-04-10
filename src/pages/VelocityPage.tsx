@@ -1,9 +1,8 @@
 import React from 'react';
 import Banner from '../components/Banner/Banner';
 import ContentBlock from '../components/ContentBlock/ContentBlock';
-import { velocityBanner, velocityLogo, heroTwoPicture, heroThreePicture, closingPicture } from '../assets/pages/velocity_page/velocityImages';
+import { velocityBanner, velocityLogo, heroTwoPicture, heroThreePicture, closingPicture, customOnePicture, customsTwoJpegPicture, customsThreePicture, transportOnePicture, transportTwoPicture, transportThreePicture, unifiedOnePicture, unifiedTwoPicture, operationalOnePicture, operationalTwoPicture, operationalThreePicture, secureOnePicture, secureTwoPicture, scaleableOnePicture, scalableTwoPicture } from '../assets/pages/velocity_page/velocityImages';
 import pageContent from '../sitecontent/velocitypage.json';
-import { customsIcon, transportIcon, unifiedIcon } from '../assets/pages/shared/sharedImages';
 import { openContactFormState } from '../sitecontent/ContactFormContent';
 
 const VelocityPage: React.FC = () => {
@@ -26,6 +25,39 @@ const VelocityPage: React.FC = () => {
   const futureCardFour = pageContent['Future Card Four'];
 
   const closingSection = pageContent['Velocity Closing'];
+
+  const customsCarouselSource = [
+    { src: customOnePicture, alt: 'Customs management picture one' },
+    { src: customsTwoJpegPicture, alt: 'Customs management picture two' },
+    { src: customsThreePicture, alt: 'Customs management picture three' },
+  ];
+
+  const transportCarouselSource = [
+    { src: transportOnePicture, alt: 'Transport management picture one' },
+    { src: transportTwoPicture, alt: 'Transport management picture two' },
+    { src: transportThreePicture, alt: 'Transport management picture three' },
+  ];
+
+  const unifiedCarouselSource = [
+    { src: unifiedOnePicture, alt: 'Unified platform picture one' },
+    { src: unifiedTwoPicture, alt: 'Unified platform picture two' },
+  ];
+
+  const operationalCarouselSource = [
+    { src: operationalOnePicture, alt: 'Operational visibility picture one' },
+    { src: operationalTwoPicture, alt: 'Operational visibility picture two' },
+    { src: operationalThreePicture, alt: 'Operational visibility picture three' },
+  ];
+
+  const secureCarouselSource = [
+    { src: secureOnePicture, alt: 'Secure infrastructure picture one' },
+    { src: secureTwoPicture, alt: 'Secure infrastructure picture two' },
+  ];
+
+  const scalableCarouselSource = [
+    { src: scaleableOnePicture, alt: 'Scalable architecture picture one' },
+    { src: scalableTwoPicture, alt: 'Scalable architecture picture two' },
+  ];
 
   return (
     <>
@@ -56,11 +88,7 @@ const VelocityPage: React.FC = () => {
           type: 'carousel',
           styling: { height: '50vh', theme: 'purple', },
           behavior: { numScroll: 1, circular: true, autoplayInterval: 5000 },
-            source: [
-              { src: customsIcon, alt: 'Customs Management' },
-              { src: transportIcon, alt: 'Transport Management' },
-              { src: unifiedIcon, alt: 'Unified Operational Platform' },
-          ]
+            source: customsCarouselSource
         }}
         right={{ type: 'text', source: customsManagementSection, useCard: true }}
         backgroundColor='#F8FAFC'
@@ -74,11 +102,7 @@ const VelocityPage: React.FC = () => {
           type: 'carousel',
           styling: { height: '50vh', theme: 'purple' },
           behavior: { numScroll: 1, circular: true, autoplayInterval: 5000 },
-            source: [
-              { src: customsIcon, alt: 'Customs Management' },
-              { src: transportIcon, alt: 'Transport Management' },
-              { src: unifiedIcon, alt: 'Unified Operational Platform' },
-          ]
+            source: transportCarouselSource
         }}
         left={{ type: 'text', source: transportManagementSection, useCard: true }}
         topMargin='5vh'
@@ -90,11 +114,7 @@ const VelocityPage: React.FC = () => {
           type: 'carousel',
           styling: { height: '50vh', theme: 'purple' },
           behavior: { numScroll: 1, circular: true, autoplayInterval: 5000 },
-            source: [
-              { src: customsIcon, alt: 'Customs Management' },
-              { src: transportIcon, alt: 'Transport Management' },
-              { src: unifiedIcon, alt: 'Unified Operational Platform' },
-          ]
+            source: unifiedCarouselSource
         }}
         right={{ type: 'text', source: unifiedOperationalPlatformSection, useCard: true }}
         backgroundColor='#F8FAFC'
@@ -107,11 +127,7 @@ const VelocityPage: React.FC = () => {
           type: 'carousel',
           styling: { height: '50vh', theme: 'purple' },
           behavior: { numScroll: 1, circular: true, autoplayInterval: 5000 },
-          source: [
-              { src: customsIcon, alt: 'Customs Management' },
-              { src: transportIcon, alt: 'Transport Management' },
-              { src: unifiedIcon, alt: 'Unified Operational Platform' },
-          ]
+          source: operationalCarouselSource
         }}
         left={{ type: 'text', source: operationalVisibilitySection, useCard: true }}
         topMargin='5vh'
@@ -122,11 +138,7 @@ const VelocityPage: React.FC = () => {
           type: 'carousel',
           styling: { height: '50vh', theme: 'purple' },
           behavior: { numScroll: 1, circular: true, autoplayInterval: 5000 },
-          source: [
-            { src: customsIcon, alt: 'Customs Management' },
-            { src: transportIcon, alt: 'Transport Management' },
-            { src: unifiedIcon, alt: 'Unified Operational Platform' },
-          ]
+          source: secureCarouselSource
         }}
         right={{ type: 'text', source: secureReliableInfrastructureSection, useCard: true }}
         backgroundColor='#F8FAFC'
@@ -138,11 +150,7 @@ const VelocityPage: React.FC = () => {
           type: 'carousel',
           styling: { height: '50vh', theme: 'purple' },
           behavior: { numScroll: 1, circular: true, autoplayInterval: 5000 },
-            source: [
-              { src: customsIcon, alt: 'Customs Management' },
-              { src: transportIcon, alt: 'Transport Management' },
-              { src: unifiedIcon, alt: 'Unified Operational Platform' },
-          ]
+            source: scalableCarouselSource
         }}
         left={{ type: 'text', source: scalableSoftwareArchitectureSection, useCard: true }}
         topMargin='5vh'

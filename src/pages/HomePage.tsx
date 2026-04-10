@@ -2,8 +2,7 @@ import React from 'react';
 import Banner from '../components/Banner/Banner';
 import ContentBlock from '../components/ContentBlock/ContentBlock';
 import content from '../sitecontent/homepage.json';
-import { homeBanner, hero1, softwareDevIcon, supportIcon, saasIcon, hostingIcon, webIcon, homeServices } from '../assets/pages/home_page/homeImages';
-import { customsIcon, transportIcon, unifiedIcon, scalableIcon } from '../assets/pages/shared/sharedImages';
+import { homeBanner, hero1, softwareDevIcon, supportIcon, saasIcon, hostingIcon, webIcon, homeServices, homeOnePicture, homeTwoPicture, homeThreePicture, customsIcon, transportIcon, unifiedIcon, scalableIcon } from '../assets/pages/home_page/homeImages';
 import { logo } from '../assets/global/globalImages';
 import { velocityLogo } from '../assets/pages/velocity_page/velocityImages';
 import { openContactFormState } from '../sitecontent/ContactFormContent';
@@ -63,23 +62,17 @@ const HomePage: React.FC = () => {
       <ContentBlock
         left={{
           type: 'carousel',
-          styling: { height: '40vh', theme: 'purple' },
+          styling: { height: '50vh', theme: 'purple' },
           behavior: {
-            numVisible: 3,
+            numVisible: 2,
             numScroll: 1,
             circular: true,
             autoplayInterval: 5000,
           },
           source: [
-            { src: softwareDevIcon, alt: 'Bespoke Software Development' },
-            { src: saasIcon, alt: 'SaaS Platform Development' },
-            { src: webIcon, alt: 'Web Application Development' },
-            { src: hostingIcon, alt: 'Hosting and Technical Infrastructure' },
-            { src: supportIcon, alt: 'IT Support' },
-            { src: customsIcon, alt: 'Customs Management' },
-            { src: transportIcon, alt: 'Transport Management' },
-            { src: unifiedIcon, alt: 'Unified Operational Platform' },
-            { src: scalableIcon, alt: 'Scalable Software Architecture' }
+            { src: homeOnePicture, alt: 'Home picture one' },
+            { src: homeTwoPicture, alt: 'Home picture two' },
+            { src: homeThreePicture, alt: 'Home picture three' }
           ]
         }}
         backgroundColor='#F8FAFC'

@@ -7,7 +7,7 @@ import logo from '../../assets/global/logo.png';
 import afssLogo from '../../assets/global/afss_logo.png';
 
 // Import content
-import { officeDetails, companyDetails, contactLinks, credits, copyright } from '../../sitecontent/FooterContent';
+import { officeDetails, companyDetails, contactLinks, credits, copyright, creatorCredit } from '../../sitecontent/FooterContent';
 
 const Footer: React.FC = () => {
   return (
@@ -51,6 +51,9 @@ const Footer: React.FC = () => {
       <div className='footer-middle'>
         <img src={logo} className='footer-logo-main'/>
         <div>{copyright.map((line) => (<div key={line} className='footer-text'>{line}</div>))}</div>
+        <a className='footer-creator-link' href={creatorCredit[0].href} target={creatorCredit[0].target} rel={creatorCredit[0].rel}>
+          {creatorCredit[0].label}
+        </a>
       </div>
 
       {/* Right Section of the footer */}

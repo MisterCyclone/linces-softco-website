@@ -44,6 +44,20 @@
   gap: 0.3vw;
 }
 
+.footer-creator-link {
+  font-size: 0.8vw;
+  font-weight: 350;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3vw;
+  color: #cfcfcf;
+  text-decoration: none;
+}
+
+.footer-creator-link:hover {
+  text-decoration: underline;
+}
+
 .footer-icon {
   font-size: 1vw;
 }

@@ -65,3 +65,13 @@ export const credits: string[][] = [
   ['All assets used are sourced from www.vecteezy.com', 'and are used under the free license.'],
 ];
 
+export const creatorCredit: FooterLink[] = [
+  {
+    label: 'Website Created by Alfie Skinner (MisterCyclone)',
+    href: 'https://github.com/MisterCyclone',
+    icon: 'pi pi-globe',
+    target: '_blank',
+    rel: 'noreferrer',
+  }
+];
+
