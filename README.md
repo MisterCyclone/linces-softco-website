@@ -28,7 +28,6 @@ This allows for a plug and play style for creating or editing pages and content.
 linces-softco-website/
 |-- src/
 |   |-- assets/
-|   |   |-- banners/
 |   |   |-- global/
 |   |   `-- pages/
 |   |       |-- aboutus_page/
