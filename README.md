@@ -22,6 +22,12 @@ This allows for a plug and play style for creating or editing pages and content.
 - [TypeScript](https://www.typescriptlang.org/) - Programming Language (Functionality)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Stylesheet language. (Visuals)
 
+
+## Screenshots
+![Top of Homepage](/src/assets/screenshots/Screenshot-1.png)
+![Middle of Homepage](/src/assets/screenshots/Screenshot-2.png)
+![Bottom of Homepage](/src/assets/screenshots/Screenshot-3.png)
+
 ## Project Structure
 
 ```text
